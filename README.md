@@ -1,6 +1,5 @@
 # proyectoIV
 
-Mi propuesta es una plataforma en la cual uno pueda recomendar vídeos de Youtube, canciones de Spotify o imágenes a uno o varios amigos de forma sencilla.
+El mundo de la animación japonesa, o anime, en lo que respecta tanto a películas como a series está creciendo a un ritmo enorme en estos últimos años en occidente.
 
-Normalmente estos contenidos se comparten por medio de aplicaciones de mensajería como Whatsapp o Telegram, y al final ensucian el chat pudiendo dificultar buscar información más relevante.
-Por medio de mi plataforma, eliges a quien recomendar, ya sea un amigo, varios o todos tus amigos, y ese contenido aparece en la "timeline" de esas personas.
+Es por ello que podría ser útil una aplicación que recomiende este tipo de series al usuario adaptándose a sus gustos y proporcionandole información útil como dónde puede ver el contenido de manera legal.
