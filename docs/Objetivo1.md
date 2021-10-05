@@ -12,5 +12,3 @@ Teniendo esto en cuenta, crearemos a dos usuarios que pueden darle uso a nuestra
 
 * **Raúl**, varón de 16 años, cursando actualmente la ESO y acostumbrado al manejo de la tecnología. Su grupo de amigos está comenzando a consumir anime y quiere obtener una recomendación de acuerdo a sus gustos.
 * **David**, varón de 22 años, cursando actualmente sus estudios universitarios y acostumbrado al manejo de la tecnología. Lleva 5 años consumiendo anime de forma intermitente. Tiene perfil en myanimelist. Busca una serie interesante para ver.
-
-##Historias de usuario
