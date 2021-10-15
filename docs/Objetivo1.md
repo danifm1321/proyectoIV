@@ -1,5 +1,5 @@
-#Documentación correspondiente al objetivo 1
-##Tipos de usuarios
+# Documentación correspondiente al objetivo 1
+## Tipos de usuarios
 
 Esta aplicación está orientada a un público joven, de entre 15 y 23 años, en su mayoría varones. Dentro de este grupo, tenemos las siguientes diferenciaciones, según tenga o no myanimelist. Myanimelist es una plataforma que usan algunos consumidores de anime en la cual se pueden añadir los animes que uno ha visto y puntuarlos con nota. El uso de esta plataforma podrá ser útil para crear las recomendaciones personalizadas.
 
