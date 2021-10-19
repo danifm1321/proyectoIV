@@ -5,4 +5,4 @@ Para el desarrollo de este proyecto se ha elegido Python como lenguaje de progra
 
 ## Entidad
 
-Se ha desarrollado la clase Anime tal y como se ha descrito en el issue #8.
+Se ha desarrollado la clase Anime tal y como se ha descrito en la [HU-P1](https://github.com/danifm1321/proyectoIV/issues/8).
