@@ -34,6 +34,11 @@ Y una vez en el entorno podemos ver la lista de tareas definidas con:
 invoke --list
 ```
 
+Ya podemos comprobar que la sintaxis de nuestro proyecto funciona correctamente con 
+```shell
+invoke check
+```
+
 ## Documentación
 - [Documentacion correspondiente al objetivo 1](docs/Objetivo1.md)
 - [Documentacion correspondiente al objetivo 2](docs/Objetivo2.md)
