@@ -112,3 +112,16 @@ class Anime:
         self.plataformas = plataformas
         self.visualizaciones = visualizaciones
         self.puntuacion_media = puntuacion_media
+
+        '''
+        Recalcula tanto la nota media como las visualizaciones después de que un usuario haya completado su visualización
+
+        Argumentos
+        ----------
+        nota: float
+            Nota puesta por el usuario
+        '''
+
+        def recalcula_media(self, nota):
+            self.puntuacion_media = ((puntuacion_media*self.visualizaciones+nota)/(self.visualizaciones+1))
+            self.visualizaciones += 1
