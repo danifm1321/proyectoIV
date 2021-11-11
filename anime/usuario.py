@@ -1,9 +1,8 @@
 # Fichero que contiene la clase Usuario
-
-
+from .anime import *
 
 class Usuario:
-    
+
     '''
     Clase que representa a un usuario
     
@@ -40,4 +39,6 @@ class Usuario:
         self.contrasena = contrasena
         self.vistos = vistos
         self.recomendaciones = recomendaciones
+    
+
         
