@@ -4,4 +4,3 @@ entidad: anime/anime.py
 automatizar:
   fichero: tasks.py
   orden: invoke
-  
