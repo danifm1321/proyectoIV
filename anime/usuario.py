@@ -1,5 +1,5 @@
 # Fichero que contiene la clase Usuario
-from .anime import *
+from anime import *
 
 class Usuario:
 
@@ -40,5 +40,13 @@ class Usuario:
         self.vistos = vistos
         self.recomendaciones = recomendaciones
     
+    def aniade_visto(self, anime, nota):
+        if self.vistos.count(anime.id) == 0:
+            pareja = (anime.id, nota)
+            self.vistos.append(pareja)
+            anime.recalcula_media(nota)
+        else:
+            raise TypeError("El anime ya está incluido")
 
-        
+    def aniade_recom(self, anime):
+        self.recomendaciones.append(anime.id)
