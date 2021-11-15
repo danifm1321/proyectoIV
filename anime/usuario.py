@@ -18,7 +18,7 @@ class Usuario:
         Historial de recomendaciones realizadas al usuario
     '''
 
-    def __init__(self, usuario, contrasena):
+    def __init__(self, usuario, contrasena, vistos = [], recomendaciones = []):
 
         '''
         Construye objeto Usuario proporcionando valores para todos sus atributos
@@ -33,13 +33,19 @@ class Usuario:
 
         self.usuario = usuario
         self.contrasena = contrasena
-        self.vistos = []
-        self.recomendaciones = []
+        self.vistos = vistos
+        self.recomendaciones = recomendaciones
     
 
     def aniade_visto(self, anime, nota):
 
-        if self.vistos.count(anime.id) == 0:
+        nuevo = True
+        for ani in self.vistos:
+            if ani[0] == anime.id:
+                nuevo = False
+                break
+
+        if nuevo:
             pareja = (anime.id, nota)
             self.vistos.append(pareja)
             anime.recalcula_media(nota)
@@ -47,6 +53,15 @@ class Usuario:
             raise TypeError("El anime ya está incluido")
 
     def aniade_recom(self, anime):
-        self.recomendaciones.append(anime.id)
 
-    
+        nuevo = True
+        for ani in self.vistos:
+            if ani[0] == anime.id:
+                nuevo = False
+                break
+
+        if nuevo:
+            if self.recomendaciones.count(anime.id) == 0:
+                self.recomendaciones.append(anime.id)
+        else:
+            raise TypeError("El usuario ya ha visto el anime")
