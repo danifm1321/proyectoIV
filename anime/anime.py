@@ -6,25 +6,22 @@ class Genero(Enum):
     """
     Enumerado que encapsula los distintos géneros en que encuadrar un anime
     """
-    ACTION = auto()
-    COMEDY = auto()
-    HORROR = auto()
-    SPORTS = auto()
-    ADVENTURE = auto()
-    DRAMA = auto()
-    MYSTERY = auto()
-    SUPERNATURAL = auto()
-    AVANTGARDE = auto()
-    FANTASY = auto()
-    ROMANCE = auto()
-    SUSPENSE = auto()
-    AWARDWINNING = auto()
-    GIRLSLOVE = auto()
-    SCIFI = auto()
-    WORKLIFE = auto()
-    BOYSLOVE = auto()
-    GOURMET = auto()
-    SLIECEOFLIFE = auto()
+    ACTION = 40
+    COMEDY = 30
+    HORROR = 70
+    SPORTS = 100
+    ADVENTURE = 40
+    DRAMA = 70
+    MYSTERY = 70
+    SUPERNATURAL = 50
+    AVANTGARDE = 100
+    FANTASY = 80
+    ROMANCE = 70
+    SUSPENSE = 60
+    GIRLSLOVE = 100
+    SCIFI = 70
+    BOYSLOVE = 100
+    SLIECEOFLIFE = 60
 
 
 class Anime:
@@ -122,6 +119,6 @@ class Anime:
             Nota puesta por el usuario
         '''
 
-        def recalcula_media(self, nota):
-            self.puntuacion_media = ((puntuacion_media*self.visualizaciones+nota)/(self.visualizaciones+1))
-            self.visualizaciones += 1
+    def recalcula_media(self, nota):
+        self.puntuacion_media = ((self.puntuacion_media*self.visualizaciones+nota)/(self.visualizaciones+1))
+        self.visualizaciones += 1
