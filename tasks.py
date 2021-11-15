@@ -13,4 +13,5 @@ def test(c):
     '''
     Realiza los tests necesarios para el correcto funcionamiento de la aplicacion
     '''
-    print("No hay tests disponibles...")
+    print("Lanzando tests...")
+    run("pytest")
