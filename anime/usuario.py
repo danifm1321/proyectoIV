@@ -18,7 +18,7 @@ class Usuario:
         Historial de recomendaciones realizadas al usuario
     '''
 
-    def __init__(self, usuario, contrasena, vistos, recomendaciones):
+    def __init__(self, usuario, contrasena):
 
         '''
         Construye objeto Usuario proporcionando valores para todos sus atributos
@@ -29,18 +29,16 @@ class Usuario:
             Nombre de usuario
         contrasena: str
             Contraseña del usuario
-        visto: list[(int, float)]
-            Historial de animes vistos por el usuario
-        recomendaciones: list[int]
-            Historial de recomendaciones realizadas al usuario
         '''
 
         self.usuario = usuario
         self.contrasena = contrasena
-        self.vistos = vistos
-        self.recomendaciones = recomendaciones
+        self.vistos = []
+        self.recomendaciones = []
     
+
     def aniade_visto(self, anime, nota):
+
         if self.vistos.count(anime.id) == 0:
             pareja = (anime.id, nota)
             self.vistos.append(pareja)
@@ -50,3 +48,5 @@ class Usuario:
 
     def aniade_recom(self, anime):
         self.recomendaciones.append(anime.id)
+
+    
