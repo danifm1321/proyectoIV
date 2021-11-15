@@ -39,7 +39,13 @@ Ya podemos comprobar que la sintaxis de nuestro proyecto funciona correctamente 
 invoke check
 ```
 
+Podemos lanzar los tests de nuestro proyecto con 
+```shell
+invoke test
+```
+
 ## Documentación
 - [Documentacion correspondiente al objetivo 1](docs/Objetivo1.md)
 - [Documentacion correspondiente al objetivo 2](docs/Objetivo2.md)
 - [Documentacion correspondiente al objetivo 3](docs/Objetivo3.md)
+- [Documentacion correspondiente al objetivo 4](docs/Objetivo4.md)
