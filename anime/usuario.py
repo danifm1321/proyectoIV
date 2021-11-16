@@ -37,15 +37,18 @@ class Usuario:
         self.recomendaciones = recomendaciones
     
 
-    def aniade_visto(self, anime, nota):
-
+    def ha_visto(self, id):
         nuevo = True
         for ani in self.vistos:
-            if ani[0] == anime.id:
+            if ani[0] == id:
                 nuevo = False
                 break
+        
+        return nuevo
 
-        if nuevo:
+    def aniade_visto(self, anime, nota):
+
+        if self.ha_visto(anime.id):
             pareja = (anime.id, nota)
             self.vistos.append(pareja)
             anime.recalcula_media(nota)
@@ -54,13 +57,7 @@ class Usuario:
 
     def aniade_recom(self, anime):
 
-        nuevo = True
-        for ani in self.vistos:
-            if ani[0] == anime.id:
-                nuevo = False
-                break
-
-        if nuevo:
+        if self.ha_visto(anime.id):
             if self.recomendaciones.count(anime.id) == 0:
                 self.recomendaciones.append(anime.id)
         else:
