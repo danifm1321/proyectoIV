@@ -1,11 +1,14 @@
 # Fichero que contiene al enumerado Genero y a la clase Anime
 
-from enum import Enum, auto
+from aenum import Enum, NoAlias      #Biblioteca para que varios enum puedan tener los mismos valores sin problemas
 
 class Genero(Enum):
     """
     Enumerado que encapsula los distintos géneros en que encuadrar un anime
     """
+
+    _settings_= NoAlias
+
     ACTION = 40
     COMEDY = 30
     HORROR = 70
