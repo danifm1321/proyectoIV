@@ -33,7 +33,7 @@ class Anime:
 
     ...
 
-    Atributos
+    Attributes
     ---------
     id : str
         Cadena identificadora del Anime
@@ -61,6 +61,11 @@ class Anime:
         Número de visualizaciones del Anime
     puntuacion_media : float
         Puntuación media que los usuarios le han dado al Anime
+    
+    Methods
+    -------
+    recalcula_media(nota)
+        Recalcula tanto la nota media como las visualizaciones después de que un usuario haya completado su visualización
     """
 
     def __init__(self, id, titulo, sinopsis, director, estudio, creador, anio, 
@@ -69,7 +74,7 @@ class Anime:
         """
         Construye objeto Anime proporcionando valores para todos sus atributos
 
-        Argumentos
+        Parameters
         ----------
             id : str
                 Cadena identificadora del Anime
@@ -116,7 +121,7 @@ class Anime:
         '''
         Recalcula tanto la nota media como las visualizaciones después de que un usuario haya completado su visualización
 
-        Argumentos
+        Parameters
         ----------
         nota: float
             Nota puesta por el usuario
