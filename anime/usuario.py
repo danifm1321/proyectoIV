@@ -10,8 +10,6 @@ class Usuario:
     ----------
     usuario: str
         Nombre de usuario
-    contrasena: str
-        Contraseña del usuario
     visto: list[(int, float)]
         Historial de animes vistos por el usuario
     recomendaciones: list[int]
@@ -27,7 +25,7 @@ class Usuario:
         Añade un anime a la lista de animes recomendados al usuario
     '''
 
-    def __init__(self, usuario, contrasena, vistos = [], recomendaciones = []):
+    def __init__(self, usuario, vistos = [], recomendaciones = []):
 
         '''
         Construye objeto Usuario proporcionando valores para todos sus atributos
@@ -36,8 +34,6 @@ class Usuario:
         ----------
         usuario: str
             Nombre de usuario
-        contrasena: str
-            Contraseña del usuario
         vistos: list[pair(int, int)]
             Lista de animes vistos por el usuario junto con su nota
         recomendaciones: list[int]
@@ -45,7 +41,6 @@ class Usuario:
         '''
 
         self.usuario = usuario
-        self.contrasena = contrasena
         self.vistos = vistos
         self.recomendaciones = recomendaciones
     

@@ -2,21 +2,6 @@
 from anime import *
 from usuario import *
 
-'''
-Función para ordenar el vector de recomendaciones por ponderación (mejor ponderación a peor)
-
-Parameters
-----------
-recom : pair(Anime, float)
-    Tupla de recomendación del anime con su ponderación
-
-Returns
--------
-recom[1] : float
-    Ponderación del anime
-'''
-def sort_func(recom):
-    return recom[1]
 
 '''
 Función que recomienda un anime en función a los géneros introducidos y el número de episodios
@@ -45,16 +30,15 @@ def recomienda(user, animes, generos, num_episodios = None):
     if len(user.vistos) == 0:
 
         for ani in animes:
-            ponderacion = 0
-            for gen in ani.generos:
-                if generos.count(gen) > 0:
-                    ponderacion += gen.value
+            puntuacion = 0
             
-            if ponderacion > 0 and (num_episodios == None or ani.capitulos <= num_episodios):
-                ponderacion *= ani.puntuacion_media
-                recom.append((ani, ponderacion))
+            puntuacion = sum(map((lambda x : anime.ponderacion[x] if generos.count(x) > 0 else 0), ani.generos))
+
+            if puntuacion > 0 and (num_episodios == None or ani.capitulos <= num_episodios):
+                puntuacion *= ani.puntuacion_media
+                recom.append((ani, puntuacion))
         
-        recom.sort(key=sort_func)
+        recom.sort(key= lambda x : x[1])
         for rec in recom:
             recomendaciones.append(rec[0])
         
