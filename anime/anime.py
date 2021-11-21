@@ -1,30 +1,32 @@
 # Fichero que contiene al enumerado Genero y a la clase Anime
+from enum import Enum, auto
 
-from aenum import Enum, NoAlias      #Biblioteca para que varios enum puedan tener los mismos valores sin problemas
+
 
 class Genero(Enum):
     """
     Enumerado que encapsula los distintos géneros en que encuadrar un anime
+    Los valores se han elegido en función a lo concreto que sea el género. Por ejemplo, el género ACTION (acción) es un género que considero más secundario, que se puede poner más a la ligera en una serie. Sin embargo, géneros más concretos como SPORTS (de deportes) son más principales, que definen más la serie que vas a ver.
     """
 
-    _settings_= NoAlias
+    ACTION = auto()
+    COMEDY = auto()
+    HORROR = auto()
+    SPORTS = auto()
+    ADVENTURE = auto()
+    DRAMA = auto()
+    MYSTERY = auto()
+    SUPERNATURAL = auto()
+    AVANT_GARDE = auto()
+    FANTASY = auto()
+    ROMANCE = auto()
+    SUSPENSE = auto()
+    GIRLS_LOVE = auto()
+    SCIFI = auto()
+    BOYS_LOVE = auto()
+    SLICE_OF_LIFE = auto()
 
-    ACTION = 40
-    COMEDY = 30
-    HORROR = 70
-    SPORTS = 100
-    ADVENTURE = 40
-    DRAMA = 70
-    MYSTERY = 70
-    SUPERNATURAL = 50
-    AVANTGARDE = 100
-    FANTASY = 80
-    ROMANCE = 70
-    SUSPENSE = 60
-    GIRLSLOVE = 100
-    SCIFI = 70
-    BOYSLOVE = 100
-    SLIECEOFLIFE = 60
+ponderacion = {Genero.ACTION : 40, Genero.COMEDY : 30, Genero.HORROR : 70, Genero.SPORTS : 100, Genero.ADVENTURE : 40, Genero.DRAMA : 40, Genero.MYSTERY : 70, Genero.SUPERNATURAL : 50, Genero.AVANT_GARDE : 100, Genero.FANTASY : 80, Genero.ROMANCE : 70, Genero.SUSPENSE : 60, Genero.GIRLS_LOVE : 100, Genero.SCIFI : 70, Genero.BOYS_LOVE : 100, Genero.SLICE_OF_LIFE : 60}
 
 
 class Anime:
@@ -66,6 +68,9 @@ class Anime:
     -------
     recalcula_media(nota)
         Recalcula tanto la nota media como las visualizaciones después de que un usuario haya completado su visualización
+    aniade_visualizacion()
+        Añade una visualización al anime
+
     """
 
     def __init__(self, id, titulo, sinopsis, director, estudio, creador, anio, 
@@ -129,4 +134,9 @@ class Anime:
 
     def recalcula_media(self, nota):
         self.puntuacion_media = ((self.puntuacion_media*self.visualizaciones+nota)/(self.visualizaciones+1))
+       
+        '''
+        Añade una visualización al anime
+        '''
+    def aniade_visualizacion(self):
         self.visualizaciones += 1
