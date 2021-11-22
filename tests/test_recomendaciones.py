@@ -1,12 +1,11 @@
 import pytest
+from assertpy import assert_that
 import sys
 sys.path.append('./')
 sys.path.append('./anime/')
 from anime.usuario import Usuario
 from anime.anime import Genero, Anime
 from anime.recomendacion import recomienda
-
-
 
 
 animes = [
@@ -25,17 +24,17 @@ user = Usuario("danifm13")
 
 
 def test_vistos_vacio():
-    assert len(user.vistos) == 0
+    assert_that(user.vistos).is_empty()
 
 def test_recomendaciones_vacio():
-    assert len(user.recomendaciones) == 0
+    assert_that(user.recomendaciones).is_empty()
 
 def test_recomienda_drama():
     recomendaciones = recomienda(user, animes, [Genero.DRAMA])
-    assert len(recomendaciones) == 5                #Se han realizado 5 recomendaciones
+    assert_that(recomendaciones).is_length(5)                   #Se han realizado 5 recomendaciones
 
 def test_actualiza_recomendaciones_usuario():
-    assert len(user.recomendaciones) > 0
+    assert_that(user.recomendaciones).is_not_empty()
 
 def test_nota_mayor():
     mayor = True
@@ -46,7 +45,7 @@ def test_nota_mayor():
             mayor = False
             break
 
-    assert mayor                                 #Al hacer una busqueda por un solo genero recomienda el que tenga mayor nota con ese genero
+    assert_that(mayor).is_true()                                 #Al hacer una busqueda por un solo genero recomienda el que tenga mayor nota con ese genero
 
 def test_genero_presente():
 
@@ -59,27 +58,27 @@ def test_genero_presente():
                 presente = True
                 break
 
-            if not presente:
-                break
+        if not presente:
+            break
 
-    assert presente                             #En todas las recomendaciones está el género deseado
+    assert_that(presente).is_true()                             #En todas las recomendaciones está el género deseado
 
 def test_recomienda_girslove():
     recomendaciones = recomienda(user, animes, [Genero.GIRLS_LOVE])
-    assert len(recomendaciones) == 0       #No hay actualmente animes con ese género, las recomendaciones deberían ser 0
+    assert_that(recomendaciones).is_empty()       #No hay actualmente animes con ese género, las recomendaciones deberían ser 0
 
 def test_recomienda_horror():
     recomendaciones = recomienda(user, animes, [Genero.HORROR])
-    assert len(recomendaciones) == 1       #Solo hay un anime con ese género
+    assert_that(recomendaciones).is_length(1)       #Solo hay un anime con ese género
 
 def test_recomienda_episodios_23():
     recomendaciones = recomienda(user, animes, [Genero.DRAMA], 23)
-    assert len(recomendaciones) == 2        #Hay dos animes dramáticos con 23 capítulos o menos
+    assert_that(recomendaciones).is_length(2)        #Hay dos animes dramáticos con 23 capítulos o menos
 
 def test_recomienda_episodios_10():
     recomendaciones = recomienda(user, animes, [Genero.ROMANCE], 12)
-    assert len(recomendaciones) == 0        #No hay animes románticos de 12 capitulos o menos
+    assert_that(recomendaciones).is_empty()        #No hay animes románticos de 12 capitulos o menos
 
 def test_recomienda_varios_generos():
     recomendaciones = recomienda(user, animes, [Genero.ACTION, Genero.MYSTERY])
-    assert len(recomendaciones) == 5        #Buscando por varios géneros da 5 resultados
+    assert_that(recomendaciones).is_length(5)        #Buscando por varios géneros da 5 resultados
