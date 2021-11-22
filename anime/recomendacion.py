@@ -2,27 +2,27 @@
 from anime import *
 from usuario import *
 
-
-'''
-Función que recomienda un anime en función a los géneros introducidos y el número de episodios
-
-Parameters
-----------
-user : Usuario
-    Usuario al que se va a realizar la recomendación
-animes : list[Anime]
-    Animes disponibles para realizar la recomendación
-generos : list[Genero]
-    Géneros seleccionados por el usuario para obtener la recomendación
-num_episodios : float, optional
-    Número de episodios máximos que quieres ver en un anime (por defecto es None)
-
-Returns
--------
-recomendaciones : list[Anime]
-    Animes seleccionados como recomendación
-'''
 def recomienda(user, animes, generos, num_episodios = None):
+
+    '''
+    Función que recomienda un anime en función a los géneros introducidos y el número de episodios
+
+    Parameters
+    ----------
+    user : Usuario
+        Usuario al que se va a realizar la recomendación
+    animes : list[Anime]
+        Animes disponibles para realizar la recomendación
+    generos : list[Genero]
+        Géneros seleccionados por el usuario para obtener la recomendación
+    num_episodios : float, optional
+        Número de episodios máximos que quieres ver en un anime (por defecto es None)
+
+    Returns
+    -------
+    recomendaciones : list[Anime]
+        Animes seleccionados como recomendación
+    '''
 
     recomendaciones = []
     recom = []
