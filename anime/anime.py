@@ -6,7 +6,6 @@ from enum import Enum, auto
 class Genero(Enum):
     """
     Enumerado que encapsula los distintos géneros en que encuadrar un anime
-    Los valores se han elegido en función a lo concreto que sea el género. Por ejemplo, el género ACTION (acción) es un género que considero más secundario, que se puede poner más a la ligera en una serie. Sin embargo, géneros más concretos como SPORTS (de deportes) son más principales, que definen más la serie que vas a ver.
     """
 
     ACTION = auto()
@@ -123,6 +122,9 @@ class Anime:
         self.visualizaciones = visualizaciones
         self.puntuacion_media = puntuacion_media
 
+
+
+    def recalcula_media(self, nota):
         '''
         Recalcula tanto la nota media como las visualizaciones después de que un usuario haya completado su visualización
 
@@ -131,12 +133,11 @@ class Anime:
         nota: float
             Nota puesta por el usuario
         '''
-
-    def recalcula_media(self, nota):
         self.puntuacion_media = ((self.puntuacion_media*self.visualizaciones+nota)/(self.visualizaciones+1))
        
+
+    def aniade_visualizacion(self):
         '''
         Añade una visualización al anime
         '''
-    def aniade_visualizacion(self):
         self.visualizaciones += 1
