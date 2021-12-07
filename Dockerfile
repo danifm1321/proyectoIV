@@ -1,6 +1,6 @@
 FROM python:3.8-slim-buster
 
-LABEL manteiner="danifm1321"
+LABEL maintainer="danifm1321"
 
 RUN groupadd -r testuser && useradd -m -r -g testuser testuser
 USER testuser
