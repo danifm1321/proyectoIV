@@ -10,6 +10,7 @@ WORKDIR /app/test
 COPY pyproject.toml poetry.lock tasks.py /app/
 
 ENV PATH=$PATH:/home/testuser/.local/bin
+
 RUN pip3 install poetry; poetry config virtualenvs.create false; poetry install
 
 ENTRYPOINT ["invoke", "test"]
