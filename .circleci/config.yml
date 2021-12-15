@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build-and-test: 
+  tests: 
     machine:
       image: ubuntu-2004:202111-01
 
@@ -14,4 +14,4 @@ jobs:
 workflows:
   sample: 
     jobs:
-      - build-and-test
+      - tests
