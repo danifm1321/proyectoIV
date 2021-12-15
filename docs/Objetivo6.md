@@ -11,3 +11,12 @@ Semaphore CI también es una sólida opción, para al darse de alta en la aplica
 Se han tenido en cuenta Jenkins y TeamCity, dos herramientas de integración continua muy potentes. Sobre todo TeamCity, ya que tiene una versión gratuita con una interfaz visual bastante atractiva y clara.
 
 Al final, me he decantado por CircleCI, ya que es el que me parece mas sencillo, ya que con un solo archivo de configuración tenemos nuestros tests preparados para ser evaluados.
+
+### Creación de config.yml
+
+He usado la versión 2.1 de CircleCI ya que es la más actual.
+He usado las imágenes de docker correspondientes a las versiones del lenguaje a testear. En un inicio, plantee utilizar el contenedor de la anterior práctica, pero se debería de construir un contenedor por versión a probar, lo cual no me pareció correcto.
+
+## Sistema para comprobar las versiones del lenguaje
+
+Para el control de las versiones del lenguaje he vuelto a usar CircleCI, ya que añadiendo unas pocas líneas extra al archivo de configuración puede comprobar las versiones de Python oportunas.
