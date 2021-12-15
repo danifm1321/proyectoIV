@@ -6,3 +6,5 @@ automatizar:
   orden: invoke
 
 test: tests/test_usuario.py
+
+CI: .circleci/config.yml
