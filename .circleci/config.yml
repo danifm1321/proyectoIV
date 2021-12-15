@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  build-and-test: 
+    machine:
+      image: ubuntu-2004:202111-01
+
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          command: docker run -t -v `pwd`:/app/test danifm1321/proyectoiv
+
+workflows:
+  sample: 
+    jobs:
+      - build-and-test
