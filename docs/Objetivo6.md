@@ -15,8 +15,8 @@ Al final, mi elección ha sido una Github Action que nos permita evaluar los tes
 ### Creación de config.yml
 
 He usado la versión 2.1 de CircleCI ya que es la más actual.
-He usado las imágenes de docker correspondientes a las versiones del lenguaje a testear. En un inicio, plantee utilizar el contenedor de la anterior práctica, pero se debería de construir un contenedor por versión a probar, lo cual no me pareció correcto, ya que no es nada escalable.
-He testeado las versiones 3.8 y 3.9 de python, ya que mi proyecto fue originalmente planteado para python 3.8, al ser una versión actual y asentada. Partiendo de ahí, he decidido testear versiones posteriores de python, la 3.9 y la 3.10.
+He usado las imágenes de docker correspondientes a las versiones del lenguaje a testear. En un inicio, planteé utilizar el contenedor de la anterior práctica, pero se debería de construir un contenedor por versión a probar, lo cual no me pareció correcto, ya que no es nada escalable.
+Las versiones a testear serán de la 3.6 hacia delante, ya que la función auto de Enum, usada en anime.py, solo está disponible de esa versión de python en adelante.
 
 ## Sistema para comprobar las versiones del lenguaje
 
