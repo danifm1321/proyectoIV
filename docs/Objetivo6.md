@@ -8,16 +8,16 @@ También consideraremos usar CircleCI. CircleCI funciona sin plugins externos, y
 
 Semaphore CI también es una sólida opción, para al darse de alta en la aplicación observamos que únicamente hay una prueba gratuita de 15 días, por lo tanto es descartado.
 
-Se han tenido en cuenta Jenkins y TeamCity, dos herramientas de integración continua muy potentes. Sobre todo TeamCity, ya que tiene una versión gratuita con una interfaz visual bastante atractiva y clara.
+Se han tenido en cuenta Jenkins y TeamCity, dos herramientas de integración continua muy potentes. Sobre todo TeamCity, ya que tiene una versión gratuita con una interfaz visual bastante atractiva y clara. Para ambas es necesario una instalación para su uso, por lo que quedan descartadas ante alternativas que nos permiten una implementación más simple en el proyecto.
 
 Al final, mi elección ha sido una Github Action que nos permita evaluar los tests cada vez que añadamos código nuevo, ya que la integración de la Github Action en nuestro proyecto es muy sencilla: simplemente un archivo en el directorio correspondiente. 
+
+## Sistema para comprobar las versiones del lenguaje
+
+Para el control de las versiones del lenguaje he usado CircleCI, ya que cuenta con unos entornos docker de los lenguajes de python que nos permiten testear las versiones fácilmente.
 
 ### Creación de config.yml
 
 He usado la versión 2.1 de CircleCI ya que es la más actual.
 He usado las imágenes de docker correspondientes a las versiones del lenguaje a testear. En un inicio, planteé utilizar el contenedor de la anterior práctica, pero se debería de construir un contenedor por versión a probar, lo cual no me pareció correcto, ya que no es nada escalable.
-Las versiones a testear serán de la 3.6 hacia delante, ya que la función auto de Enum, usada en anime.py, solo está disponible de esa versión de python en adelante.
-
-## Sistema para comprobar las versiones del lenguaje
-
-Para el control de las versiones del lenguaje he usado CircleCI, ya que cuenta con unos entornos docker de los lenguajes de python que nos permiten testear las versiones fácilmente.
+Sabemos que la función auto de Enum, usada en anime.py, solo funciona de python 3.6 en adelante, así que las versiones de python a ser candidatas son python 3.6, 3.7, 3.8, 3.9 y 3.10. Descartaremos python 3.8, ya que es la usada en el docker que se testea a través de la Github Action. Python 3.6 también será descartada ya que dejará de recibir [actualizaciones de seguridad](https://endoflife.date/python) a partir de 2022. Teniendo esto en cuenta, considero conveniente testear las versiones 3.7, 3.9 y 3.10 usando circle CI.
