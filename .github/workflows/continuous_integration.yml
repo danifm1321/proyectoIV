@@ -1,0 +1,11 @@
+name: proyectoIV
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: docker run -t -v `pwd`:/app/test danifm1321/proyectoiv

@@ -50,3 +50,4 @@ invoke test
 - [Documentacion correspondiente al objetivo 3](docs/Objetivo3.md)
 - [Documentacion correspondiente al objetivo 4](docs/Objetivo4.md)
 - [Documentacion correspondiente al objetivo 5](docs/Objetivo5.md)
+- [Documentacion correspondiente al objetivo 6](docs/Objetivo6.md)
